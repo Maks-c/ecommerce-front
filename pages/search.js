@@ -4,7 +4,7 @@ import Input from "/components/Input";
 import styled from "styled-components";
 import {useCallback, useEffect, useRef, useState} from "react";
 import axios from "axios";
-import ProductsGrid from "/components/ProductsGrid";
+import ProductsGrid from "/components/GridProducts";
 import {debounce} from "lodash";
 import Spinner from "/components/Spinner";
 
