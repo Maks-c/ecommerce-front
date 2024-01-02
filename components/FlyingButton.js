@@ -71,6 +71,7 @@ export default function FlyingButton(props) {
         white={props.white}
         main={props.main}
         onClick={() => addProduct(props._id)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={props.src} alt="" ref={imgRef} />
         <button onClick={ev => sendImageToCart(ev)} {...props} />
       </FlyingButtonWrapper>

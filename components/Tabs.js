@@ -20,6 +20,7 @@ export default function Tabs({tabs,active,onChange}) {
   return (
     <StyledTabs>
       {tabs.map(tabName => (
+          // eslint-disable-next-line react/jsx-key
         <StyledTab
           onClick={() => { onChange(tabName) }}
           active={tabName === active}

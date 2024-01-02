@@ -88,6 +88,7 @@ export default function ProductBox({
   _id,title,description,price,images,wished=false,
   onRemoveFromWishlist=()=>{},
 }) {
+  console.log({images})
   const url = '/product/'+_id;
   const [isWished,setIsWished] = useState(wished);
   function addToWishlist(ev) {
@@ -109,6 +110,7 @@ export default function ProductBox({
           <WishlistButton wished={isWished} onClick={addToWishlist}>
             {isWished ? <HeartSolidIcon /> : <HeartOutlineIcon />}
           </WishlistButton>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={images?.[0]} alt=""/>
         </div>
       </WhiteBox>

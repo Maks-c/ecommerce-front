@@ -25,6 +25,7 @@ export default function SearchPage() {
   const [phrase,setPhrase] = useState('');
   const [products,setProducts] = useState([]);
   const [isLoading,setIsLoading] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSearch = useCallback(
     debounce(searchProducts, 500), []
   );

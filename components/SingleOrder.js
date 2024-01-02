@@ -25,6 +25,10 @@ const Address = styled.div`
 `;
 
 export default function SingleOrder({line_items,createdAt,...rest}) {
+
+
+
+
   return (
     <StyledOrder>
       <div>
@@ -38,6 +42,7 @@ export default function SingleOrder({line_items,createdAt,...rest}) {
       </div>
       <div>
         {line_items.map(item => (
+            // eslint-disable-next-line react/jsx-key
           <ProductRow>
             <span>{item.quantity} x </span>
             {item.price_data.product_data.name}

@@ -28,43 +28,44 @@ const Price = styled.span`
   font-size: 1.4rem;
 `;
 
-export default function ProductPage({product}) {
-  return (
-    <>
-      <Header />
-      <Center>
-        <ColWrapper>
-          <WhiteBox>
-            <ProductImages images={product.images} />
-          </WhiteBox>
-          <div>
-            <Title>{product.title}</Title>
-            <p>{product.description}</p>
-            <PriceRow>
-              <div>
-                <Price>${product.price}</Price>
-              </div>
-              <div>
-                <FlyingButton main _id={product._id} src={product.images?.[0]}>
-                  <CartIcon />Add to cart
-                </FlyingButton>
-              </div>
-            </PriceRow>
-          </div>
-        </ColWrapper>
-        <ProductReviews product={product} />
-      </Center>
-    </>
-  );
+export default function ProductPage({product}){
+    console.log({product})
+    return (
+        <>
+            <Header/>
+            <Center>
+                <ColWrapper>
+                    <WhiteBox>
+                        <ProductImages images={product.images}/>
+                    </WhiteBox>
+                    <div>
+                        <Title>{product.title}</Title>
+                        <p>{product.description}</p>
+                        <PriceRow>
+                            <div>
+                                <Price>${product.price}</Price>
+                            </div>
+                            <div>
+                                <FlyingButton main _id={product._id} src={product.images?.[0]}>
+                                    <CartIcon/>Add to cart
+                                </FlyingButton>
+                            </div>
+                        </PriceRow>
+                    </div>
+                </ColWrapper>
+                <ProductReviews product={product}/>
+            </Center>
+        </>
+    );
 }
 
-export async function getServerSideProps(context) {
-  await mongooseConnect();
-  const {id} = context.query;
-  const product = await Product.findById(id);
-  return {
-    props: {
-      product: JSON.parse(JSON.stringify(product)),
+export async function getServerSideProps(context){
+    await mongooseConnect();
+    const {id} = context.query;
+    const product = await Product.findById(id);
+    return {
+        props: {
+            product: JSON.parse(JSON.stringify(product)),
+        }
     }
-  }
 }

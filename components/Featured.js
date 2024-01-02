@@ -97,6 +97,7 @@ export default function Featured({product}) {
           <ImgColumn>
             <RevealWrapper delay={0}>
               <CenterImg>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img className={'main'} src={product.images?.[0]} alt=""/>
               </CenterImg>
             </RevealWrapper>

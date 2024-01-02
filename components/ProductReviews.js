@@ -110,6 +110,7 @@ export default function ProductReviews({product}) {
               <p>No reviews :(</p>
             )}
             {reviews.length > 0 && reviews.map(review => (
+                // eslint-disable-next-line react/jsx-key
               <ReviewWrapper>
                 <ReviewHeader>
                   <StarsRating size={'sm'} disabled={true} defaultHowMany={review.stars} />

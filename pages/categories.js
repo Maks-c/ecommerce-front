@@ -56,6 +56,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
       <Header />
       <Center>
         {mainCategories.map(cat => (
+            // eslint-disable-next-line react/jsx-key
           <CategoryWrapper>
             <CategoryTitle>
               <h2>{cat.name}</h2>
@@ -65,6 +66,7 @@ export default function CategoriesPage({mainCategories,categoriesProducts,wished
             </CategoryTitle>
             <CategoryGrid>
               {categoriesProducts[cat._id].map((p,index) => (
+                  // eslint-disable-next-line react/jsx-key
                 <RevealWrapper delay={index*50}>
                   <ProductBox {...p} wished={wishedProducts.includes(p._id)} />
                 </RevealWrapper>
